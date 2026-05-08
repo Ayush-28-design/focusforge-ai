@@ -76,7 +76,7 @@ export const loginUser = async (req: Request, res: Response) => {
         id: user.id,
         role: user.role,
       },
-      process.env.JWT_SECRET as string,
+      process.env.JWT_SECRET || "focusforge_secret_key",
       {
         expiresIn: "7d",
       },
@@ -87,10 +87,12 @@ export const loginUser = async (req: Request, res: Response) => {
       token,
       user,
     });
-  } catch (error) {
+  } catch (error: any) {
+    console.log("LOGIN ERROR:", error);
+
     res.status(500).json({
       message: "Login failed",
-      error,
+      error: error.message,
     });
   }
 };
