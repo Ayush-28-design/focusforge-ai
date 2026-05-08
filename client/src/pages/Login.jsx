@@ -25,28 +25,33 @@ function Login() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+      <div className="bg-gray-800 p-8 rounded-2xl shadow-lg w-96">
+        <h1 className="text-3xl font-bold text-white mb-6 text-center">
+          FocusForge AI
+        </h1>
 
-      <input
-        type="email"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <input
+          type="email"
+          placeholder="Email"
+          className="w-full p-3 mb-4 rounded-lg bg-gray-700 text-white outline-none"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <br />
-      <br />
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full p-3 mb-6 rounded-lg bg-gray-700 text-white outline-none"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-
-      <br />
-      <br />
-
-      <button onClick={handleLogin}>Login</button>
+        <button
+          onClick={handleLogin}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg transition"
+        >
+          Login
+        </button>
+      </div>
     </div>
   );
 }
