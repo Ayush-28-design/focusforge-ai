@@ -1,7 +1,19 @@
 function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-10">
-      <h1 className="text-4xl font-bold mb-6">Welcome to FocusForge AI 🚀</h1>
+      <div className="flex justify-between items-center mb-6">
+        <h1 className="text-4xl font-bold">Welcome to FocusForge AI 🚀</h1>
+
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            window.location.href = "/";
+          }}
+          className="bg-red-500 px-4 py-2 rounded-lg"
+        >
+          Logout
+        </button>
+      </div>
 
       <div className="grid grid-cols-3 gap-6">
         <div className="bg-gray-800 p-6 rounded-2xl">
@@ -24,4 +36,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
- 
