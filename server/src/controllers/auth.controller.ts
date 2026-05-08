@@ -35,6 +35,8 @@ export const registerUser = async (req: Request, res: Response) => {
       user,
     });
   } catch (error) {
+    console.log("LOGIN ERROR:", error);
+
     res.status(500).json({
       message: "Registration failed",
       error,
